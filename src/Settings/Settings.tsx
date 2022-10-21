@@ -1,16 +1,15 @@
 import React from 'react'
 import './Settings.scss';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actionCreators, State } from '../state/index';
+import { actionCreators } from '../state/index';
 
 function Settings() {
 
    const dispatch = useDispatch();
 
    const { setTime, selectTime, setGame } = bindActionCreators(actionCreators, dispatch);
-   // const time = useSelector((state: State) => state.settings);
 
    const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
@@ -20,8 +19,6 @@ function Settings() {
 
    return (
       <div className="settings">
-      {/* <p>{time['timeSelected']} minutes selected</p>
-      <p>{time['timeSubmitted']} minutes submitted</p> */}
          <form action="submit" className="settings-form" onSubmit={handleSubmit}>
             <div className="settings-form-tile">
                <h3>choose the number of tiles you want to play with</h3>
@@ -81,7 +78,7 @@ function Settings() {
                   <label className="settings-form-time-label">1 minutes</label>
                </div>
             </div>
-         <button className="settings-form-submit">Start</button>
+         <button className="settings-form-submit">Start the Game !</button>
          </form>
       </div>
 
