@@ -1,6 +1,9 @@
 import React from 'react';
+import './GameBoard.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { State } from '../state/index';
+import { State } from '../../state/index';
+
+import Tile from '../Tile/Tile';
 
 function GameBoard() {
    const dispatch = useDispatch();
@@ -12,14 +15,13 @@ function GameBoard() {
   const tiles = memory.tiles;
 
   return (
-    <div className="gameboard">
-      <div className="gameboard-tiles">
+    <div className="Gameboard">
+      <div className="Gameboard-tiles">
          {tiles.map(tile => (
-            <img src={tile.src} key={tile.key} alt="logo"></img>
-         ))}
-
+            <Tile tile={tile} />
+            ))}
       </div>
-      <div className="gameboard-timer"></div>
+      <div className="Gameboard-timer"></div>
       
     </div>
   )

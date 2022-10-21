@@ -19,7 +19,7 @@ const Tiles: Tile[] = [
    {name: "vestiaire", src: "/images/vestiaire.png", id: 8}
 ];
 
-type shuffledTile = {
+type ShuffledTile = {
    name: string;
    src: string;
    id: number;
@@ -30,7 +30,7 @@ type Memory = {
    timer: number;
    gameAdvancement: string;
    result: boolean;
-   tiles: shuffledTile[];
+   tiles: ShuffledTile[];
 }
 
 const initialState: Memory = {

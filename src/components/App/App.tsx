@@ -1,6 +1,6 @@
 import './App.scss';
 import { useSelector } from 'react-redux';
-import { State } from '../state/index';
+import { State } from '../../state/index';
 
 import Settings from '../Settings/Settings';
 import GameBoard from '../GameBoard/GameBoard';

@@ -1,0 +1,25 @@
+.Gameboard {
+   background-color: rgb(146, 155, 62);
+   padding: 1em;
+   // display: flex;
+   // flex-direction: column;
+   // align-items: center;
+   &-tiles {
+      background-color:lightblue;
+      padding: 1em;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 1em;
+   }
+   &-tile {
+      &-front {
+         width: 12vh;
+         height: 12vh;
+      }
+      &-back {
+         background-color: tomato;
+         width: 12vh;
+         height: 12vh;
+      }
+   }
+}
