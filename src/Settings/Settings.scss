@@ -1,0 +1,25 @@
+.settings {
+   border: 1px solid tomato;
+   width: 70%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   &-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &-tile {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+      &-timer {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+      &-submit {
+         margin: 15px 0;
+      }
+   }
+}

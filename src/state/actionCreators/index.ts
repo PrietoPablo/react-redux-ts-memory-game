@@ -1,4 +1,9 @@
-import { Action, SET_TIME, SELECT_TIME } from "../actions";
+import { 
+   Action,
+   SET_TIME,
+   SELECT_TIME,
+   SET_GAME
+} from "../actions";
 import { Dispatch } from 'redux';
 
 export const setTime = () => {
@@ -15,5 +20,13 @@ export const selectTime = (time: number) => {
          type: SELECT_TIME,
          payload: time
       });
+   }
+}
+
+export const setGame = () => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: SET_GAME,
+      })
    }
 }

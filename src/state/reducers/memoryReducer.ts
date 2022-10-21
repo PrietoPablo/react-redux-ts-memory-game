@@ -1,11 +1,23 @@
 import { 
    Action,
-   SET_TIME,
+   // SET_TIME,
    } from '../actions/index';
 
-const initialState = 0;
+type Memory = {
+   tiles: number;
+   timer: number;
+   gameAdvancement: string;
+   result: boolean;
+}
 
-const reducer = (state: number = initialState, action: Action) => {
+const initialState = {
+   tiles: 16,
+   timer: 0,
+   gameAdvancement: 'starting',
+   result: false,
+};
+
+const reducer = (state: Memory = initialState, action: Action) => {
    switch (action.type) {
       // case SET_TIME:
       //    return state = action.payload;

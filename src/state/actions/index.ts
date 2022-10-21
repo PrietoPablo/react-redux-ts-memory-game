@@ -9,4 +9,9 @@ interface SelectTime {
    payload: number;
 }
 
-export type Action = SetTime | SelectTime;
+export const SET_GAME = 'SET_GAME';
+interface SetGame {
+   type: typeof SET_GAME;
+}
+
+export type Action = SetTime | SelectTime | SetGame;
