@@ -4,17 +4,26 @@
       width: 12vh;
       height: 12vh;
       display: block;
-      transform: rotateY(90deg);
       position: absolute;
+      transform: rotateY(90deg);
+      transition: ease-out 0.25s;
 
    }
    &-back {
       width: 12vh;
       height: 12vh;
       display: block;
+      transition: ease-in 0.25s;
+      transition-delay: 0.25s;
    }
 }
 
 .reveal .Tile-front {
    transform: rotateY(0deg);
+   transition-delay: 0.25s;
+}
+
+.reveal .Tile-back {
+   transform: rotateY(90deg);
+   transition-delay: 0s;
 }

@@ -20,10 +20,7 @@ function GameBoard() {
 
   // Will make a new render each time there is a change on firstChoice and secondChoice
   // useEffect is a bit cloudy to explain right now
-  useEffect(() => {
-    // console.log("firstChoice", memory.firstChoice);
-    // console.log("secondChoice", memory.secondChoice);
-    
+  useEffect(() => {    
     if (memory.firstChoice && memory.secondChoice) {
       // it would have been more simple to register the all tiles for first and second choice
       const choices = tiles.filter(tile => tile.key === memory.firstChoice || tile.key === memory.secondChoice);
@@ -34,16 +31,13 @@ function GameBoard() {
       : 
       console.log('no match');
 
-      resetChoices();
-      
+      setTimeout(() => resetChoices(), 700);      
     }
 
   }, [memory.firstChoice, memory.secondChoice]);
 
   // There two re render after each useEffect and I don't know why
   // console.log(tiles);
-
-
   
   return (
     <div className="Gameboard">

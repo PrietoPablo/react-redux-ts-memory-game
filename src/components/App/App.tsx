@@ -7,8 +7,7 @@ import GameBoard from '../GameBoard/GameBoard';
 
 function App() {
   const settings = useSelector((state: State) => state.settings);
-  // const memory = useSelector((state: State) => state.memory);
-  // console.log(memory);
+
   return (
     <div className="App">
       <h1>Memory</h1>
