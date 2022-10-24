@@ -1,12 +1,15 @@
 import { 
    Action,
    CHOOSE_TILE,
+   IS_MATCHED,
+   RESET_CHOICES
    } from '../actions/index';
 
 type Tile = {
    name: string;
    src: string;
    id: number;
+   isMatched: boolean;
    key?: number;
 }
 type Memory = {
@@ -14,19 +17,19 @@ type Memory = {
    gameAdvancement: string;
    result: boolean;
    tiles: Tile[];
-   firstChoice?: number;
-   secondChoice?: number;
+   firstChoice: number | null;
+   secondChoice: number | null;
 }
 
 const Tiles: Tile[] = [
-   {name: "aircall", src: "/images/aircall.jpg", id: 1},
-   {name: "algolia", src: "/images/algolia.png", id: 2},
-   {name: "blablacar", src: "/images/blablacar.png", id: 3},
-   {name: "meero", src: "/images/meero.jpg", id: 4},
-   {name: "payfit", src: "/images/payfit.png", id: 5},
-   {name: "qonto", src: "/images/qonto.png", id: 6},
-   {name: "sorare", src: "/images/sorare.jpg", id: 7},
-   {name: "vestiaire", src: "/images/vestiaire.png", id: 8}
+   {name: "aircall", src: "/images/aircall.jpg", id: 1, isMatched: false},
+   {name: "algolia", src: "/images/algolia.png", id: 2, isMatched: false},
+   {name: "blablacar", src: "/images/blablacar.png", id: 3, isMatched: false},
+   {name: "meero", src: "/images/meero.jpg", id: 4, isMatched: false},
+   {name: "payfit", src: "/images/payfit.png", id: 5, isMatched: false},
+   {name: "qonto", src: "/images/qonto.png", id: 6, isMatched: false},
+   {name: "sorare", src: "/images/sorare.jpg", id: 7, isMatched: false},
+   {name: "vestiaire", src: "/images/vestiaire.png", id: 8, isMatched: false}
 ];
 
 const initialState: Memory = {
@@ -34,6 +37,8 @@ const initialState: Memory = {
    gameAdvancement: 'starting',
    result: false,
    tiles: [...Tiles, ...Tiles].sort(() => Math.random() - 0.5).map((tile) => ({...tile, key: Math.random()})),
+   firstChoice: null,
+   secondChoice: null,
 };
 
 const reducer = (state: Memory = initialState, action: Action) => {
@@ -48,9 +53,20 @@ const reducer = (state: Memory = initialState, action: Action) => {
          else {
             return {
                ...state,
-               secondChoice: action.payload
+               secondChoice: action.payload,
             }
-         }         
+         }
+      case RESET_CHOICES:
+         return {
+            ...state,
+            firstChoice: null,
+            secondChoice: null,
+         } 
+      case IS_MATCHED:
+         return {
+            ...state,
+            tiles: state.tiles.map(tile => tile.id === action.payload ? {...tile, isMatched: true} : tile),
+         }      
       default:
          return state;
    }

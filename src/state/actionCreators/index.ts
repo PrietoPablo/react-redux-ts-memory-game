@@ -4,6 +4,8 @@ import {
    SELECT_TIME,
    SET_GAME,
    CHOOSE_TILE,
+   RESET_CHOICES,
+   IS_MATCHED,
 } from "../actions";
 import { Dispatch } from 'redux';
 
@@ -37,6 +39,23 @@ export const chooseTile = (tileId: number) => {
       dispatch({
          type: CHOOSE_TILE,
          payload: tileId,
+      });
+   }
+}
+
+export const resetChoices = () => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: RESET_CHOICES
+      });
+   }
+}
+
+export const isMatched = (matchedId: number) => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: IS_MATCHED,
+         payload: matchedId
       });
    }
 }

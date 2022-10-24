@@ -20,4 +20,16 @@ interface ChooseTile {
    payload: number;
 }
 
-export type Action = SetTime | SelectTime | SetGame | ChooseTile;
+export const RESET_CHOICES = 'RESET_CHOICES';
+interface ResetChoices {
+   type: typeof RESET_CHOICES;
+}
+
+export const IS_MATCHED = 'IS_MATCHED';
+interface IsMatched {
+   type: typeof IS_MATCHED;
+   payload: number;
+}
+
+
+export type Action = SetTime | SelectTime | SetGame | ChooseTile | ResetChoices | IsMatched;
