@@ -1,11 +1,20 @@
 .Tile {
+   position: relative;
    &-front {
       width: 12vh;
       height: 12vh;
+      display: block;
+      transform: rotateY(90deg);
+      position: absolute;
+
    }
    &-back {
-      background-color: tomato;
       width: 12vh;
       height: 12vh;
+      display: block;
    }
+}
+
+.reveal .Tile-front {
+   transform: rotateY(0deg);
 }

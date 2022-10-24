@@ -34,11 +34,11 @@ export const setGame = () => {
    }
 }
 
-export const chooseTile = (tileId: number) => {
+export const chooseTile = (tileKey: number) => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: CHOOSE_TILE,
-         payload: tileId,
+         payload: tileKey,
       });
    }
 }
@@ -51,11 +51,11 @@ export const resetChoices = () => {
    }
 }
 
-export const isMatched = (matchedId: number) => {
+export const isMatched = (matchedKey: number) => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: IS_MATCHED,
-         payload: matchedId
+         payload: matchedKey
       });
    }
 }

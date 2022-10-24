@@ -4,17 +4,15 @@ import { State } from '../../state/index';
 
 import Settings from '../Settings/Settings';
 import GameBoard from '../GameBoard/GameBoard';
-import { log } from 'console';
 
 function App() {
   const settings = useSelector((state: State) => state.settings);
-  const memory = useSelector((state: State) => state.memory);
-  console.log(memory);
+  // const memory = useSelector((state: State) => state.memory);
+  // console.log(memory);
   return (
     <div className="App">
       <h1>Memory</h1>
       {settings.isSetGame ? <GameBoard /> : <Settings />}
-      
     </div>
   );
 }
