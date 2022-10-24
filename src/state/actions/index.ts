@@ -14,4 +14,10 @@ interface SetGame {
    type: typeof SET_GAME;
 }
 
-export type Action = SetTime | SelectTime | SetGame;
+export const CHOOSE_TILE = 'CHOOSE_TILE';
+interface ChooseTile {
+   type: typeof CHOOSE_TILE;
+   payload: number;
+}
+
+export type Action = SetTime | SelectTime | SetGame | ChooseTile;

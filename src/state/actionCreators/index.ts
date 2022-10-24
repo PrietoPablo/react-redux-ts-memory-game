@@ -2,7 +2,8 @@ import {
    Action,
    SET_TIME,
    SELECT_TIME,
-   SET_GAME
+   SET_GAME,
+   CHOOSE_TILE,
 } from "../actions";
 import { Dispatch } from 'redux';
 
@@ -27,6 +28,15 @@ export const setGame = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: SET_GAME,
-      })
+      });
+   }
+}
+
+export const chooseTile = (tileId: number) => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: CHOOSE_TILE,
+         payload: tileId,
+      });
    }
 }

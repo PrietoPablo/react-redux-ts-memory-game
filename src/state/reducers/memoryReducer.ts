@@ -1,11 +1,21 @@
 import { 
    Action,
+   CHOOSE_TILE,
    } from '../actions/index';
 
 type Tile = {
    name: string;
    src: string;
    id: number;
+   key?: number;
+}
+type Memory = {
+   timer: number;
+   gameAdvancement: string;
+   result: boolean;
+   tiles: Tile[];
+   firstChoice?: number;
+   secondChoice?: number;
 }
 
 const Tiles: Tile[] = [
@@ -19,20 +29,6 @@ const Tiles: Tile[] = [
    {name: "vestiaire", src: "/images/vestiaire.png", id: 8}
 ];
 
-type ShuffledTile = {
-   name: string;
-   src: string;
-   id: number;
-   key: number;
-}
-
-type Memory = {
-   timer: number;
-   gameAdvancement: string;
-   result: boolean;
-   tiles: ShuffledTile[];
-}
-
 const initialState: Memory = {
    timer: 0,
    gameAdvancement: 'starting',
@@ -42,8 +38,19 @@ const initialState: Memory = {
 
 const reducer = (state: Memory = initialState, action: Action) => {
    switch (action.type) {
-      // case SET_TIME:
-      //    return state = action.payload;
+      case CHOOSE_TILE:
+         if (!state.firstChoice) {
+            return {
+               ...state,
+               firstChoice: action.payload
+            }
+         }
+         else {
+            return {
+               ...state,
+               secondChoice: action.payload
+            }
+         }         
       default:
          return state;
    }

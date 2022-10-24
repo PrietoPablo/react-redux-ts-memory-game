@@ -18,7 +18,7 @@ function GameBoard() {
     <div className="Gameboard">
       <div className="Gameboard-tiles">
          {tiles.map(tile => (
-            <Tile tile={tile} />
+            <Tile tile={tile} key={tile.key} />
             ))}
       </div>
       <div className="Gameboard-timer"></div>

@@ -11,15 +11,4 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 1em;
    }
-   &-tile {
-      &-front {
-         width: 12vh;
-         height: 12vh;
-      }
-      &-back {
-         background-color: tomato;
-         width: 12vh;
-         height: 12vh;
-      }
-   }
 }

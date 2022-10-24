@@ -1,0 +1,11 @@
+.Tile {
+   &-front {
+      width: 12vh;
+      height: 12vh;
+   }
+   &-back {
+      background-color: tomato;
+      width: 12vh;
+      height: 12vh;
+   }
+}
