@@ -1,14 +1,17 @@
 .gameboard {
    border-radius: 1em;
    background-color: white;
-   width: 75%;
-   height: 70%;
+   width: 75vw;
+   height: 70vh;
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: center;
    &-tiles {
-      background: #D37D76;
+      width: 90%;
+      height: 90%;
+      margin: 1em;
+      background-color: #D37D76;
       background: linear-gradient(0deg, #D37D76 0%, #c79f9c  100%);
       border-radius: 0.5em;
       padding: 1em;

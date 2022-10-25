@@ -1,0 +1,16 @@
+.timer{
+   background-color:#d37e76af;
+   border-radius: 0.5em;
+   height: 7%;
+   width: 86%;
+   margin: 1em 0;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   &-filling{
+      margin: 0 1em;
+      background-color:#d37e7693;
+      height: 50%;
+      width: 70%;
+   }
+}

@@ -7,6 +7,7 @@ import { bindActionCreators } from 'redux';
 import { State, actionCreators } from '../../state';
 
 import Tile from '../Tile/Tile';
+import Timer from '../Timer/Timer';
 
 function GameBoard() {
   // Redux Logic to access and manipulate state
@@ -50,11 +51,8 @@ function GameBoard() {
               key={tile.key}
               revealed={tile.key === memory.firstChoice || tile.key === memory.secondChoice || tile.isMatched} />
             ))}
-      </div>
-      <div className="timer">
-      <div className="timer-filling" style={{width: "50.5%"}} />
-      <p>{memory.timer}</p>
-    </div>      
+      </div> 
+      <Timer />     
     </div>
   )
 }
