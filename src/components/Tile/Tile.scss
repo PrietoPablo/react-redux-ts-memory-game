@@ -1,9 +1,8 @@
 .tile {
    position: relative;
    &-front {
+      width: 100%;
       border-radius: 0.5em;
-      width: 12vh;
-      height: 12vh;
       display: block;
       position: absolute;
       transform: rotateY(90deg);
@@ -11,10 +10,9 @@
 
    }
    &-back {
+      width: 100%;
       border: 1px solid white;
       border-radius: 0.5em;
-      width: 12vh;
-      height: 12vh;
       display: block;
       transition: ease-in 0.25s;
       transition-delay: 0.25s;
