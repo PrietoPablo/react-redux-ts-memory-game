@@ -1,6 +1,7 @@
-.Tile {
+.tile {
    position: relative;
    &-front {
+      border-radius: 0.5em;
       width: 12vh;
       height: 12vh;
       display: block;
@@ -10,6 +11,8 @@
 
    }
    &-back {
+      border: 1px solid white;
+      border-radius: 0.5em;
       width: 12vh;
       height: 12vh;
       display: block;
@@ -19,14 +22,12 @@
 }
 
 .reveal {
-   .Tile-front {
+   .tile-front {
       transform: rotateY(0deg);
       transition-delay: 0.25s;
-
    }
-   .Tile-back {
+   .tile-back {
       transform: rotateY(90deg);
       transition-delay: 0s;
-
    }
 }

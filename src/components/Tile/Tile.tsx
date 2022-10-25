@@ -20,23 +20,22 @@ function Tile({ tile, revealed }: Props) {
    // Redux logic
    const dispatch = useDispatch();
    const { chooseTile } = bindActionCreators(actionCreators, dispatch);
-   const memory = useSelector((state: State) => state.memory);
 
    const handleClick = () => {
       chooseTile(tile.key);
    }
 
   return (
-   <div className="Tile">
+   <div className="tile">
       <div className={revealed ? "reveal" : ""}>
          <img 
             src={tile.src} 
-            className="Tile-front"
+            className="tile-front"
             alt={`${tile.name} logo`}
          />
          <img
             src="images/cover.jpg"
-            className="Tile-back"
+            className="tile-back"
             alt="tile back"
             onClick={handleClick}
          />

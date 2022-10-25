@@ -1,11 +1,16 @@
-.Gameboard {
-   background-color: rgb(146, 155, 62);
-   padding: 1em;
-   // display: flex;
-   // flex-direction: column;
-   // align-items: center;
+.gameboard {
+   border-radius: 1em;
+   background-color: white;
+   width: 75%;
+   height: 70%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
    &-tiles {
-      background-color:lightblue;
+      background: #D37D76;
+      background: linear-gradient(0deg, #D37D76 0%, #c79f9c  100%);
+      border-radius: 0.5em;
       padding: 1em;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;

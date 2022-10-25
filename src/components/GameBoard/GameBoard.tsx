@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './GameBoard.scss';
 
 import React, { useEffect } from 'react';
@@ -10,6 +11,7 @@ import Tile from '../Tile/Tile';
 function GameBoard() {
   // Redux Logic to access and manipulate state
    const dispatch = useDispatch();
+
    const { resetChoices, isMatched } = bindActionCreators(actionCreators, dispatch);
   
   // const settings = useSelector((state: State) => state.settings);
@@ -19,7 +21,8 @@ function GameBoard() {
 
   // Will make a new render each time there is a change on firstChoice and secondChoice
   // useEffect is a bit cloudy to explain right now
-  useEffect(() => {    
+  useEffect(() => {
+    
     if (memory.firstChoice && memory.secondChoice) {
       // it would have been more simple to register the all tiles for first and second choice
       const choices = tiles.filter(tile => tile.key === memory.firstChoice || tile.key === memory.secondChoice);
@@ -39,8 +42,8 @@ function GameBoard() {
   // console.log(tiles);
   
   return (
-    <div className="Gameboard">
-      <div className="Gameboard-tiles">
+    <div className="gameboard">
+      <div className="gameboard-tiles">
          {tiles.map(tile => (
             <Tile
               tile={tile}
@@ -48,8 +51,10 @@ function GameBoard() {
               revealed={tile.key === memory.firstChoice || tile.key === memory.secondChoice || tile.isMatched} />
             ))}
       </div>
-      <div className="Gameboard-timer"></div>
-      
+      <div className="timer">
+      <div className="timer-filling" style={{width: "50.5%"}} />
+      <p>{memory.timer}</p>
+    </div>      
     </div>
   )
 }

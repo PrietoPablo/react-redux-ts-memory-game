@@ -54,12 +54,12 @@ function Settings() {
                <div className="settings-form-time-choice">
                   <input 
                      type="radio" 
-                     id="3" 
+                     id="1" 
                      name="time" 
                      className="settings-form-time-button" 
                      onClick={() => selectTime(60000)}
                   />
-                  <label className="settings-form-time-label">1 minute</label>
+                  <label className="settings-form-time-label">1 minutes</label>
                   <input 
                      type="radio" 
                      id="2" 
@@ -70,7 +70,7 @@ function Settings() {
                   <label className="settings-form-time-label">40 seconds</label>
                   <input 
                      type="radio" 
-                     id="1" 
+                     id="3" 
                      name="time" 
                      className="settings-form-time-button" 
                      onClick={() => selectTime(25000)}

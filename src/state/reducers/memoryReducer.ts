@@ -2,7 +2,7 @@ import {
    Action,
    CHOOSE_TILE,
    IS_MATCHED,
-   RESET_CHOICES
+   RESET_CHOICES,
    } from '../actions/index';
 
 type Tile = {

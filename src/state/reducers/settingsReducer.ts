@@ -2,7 +2,7 @@ import {
    Action,
    SET_TIME,
    SELECT_TIME,
-   SET_GAME
+   SET_GAME,
    } from '../actions/index';
 
 type Settings = {
@@ -14,8 +14,8 @@ type Settings = {
 
 const initialState: Settings = {
    isSetGame: false,
-   timeSelected: 2,
-   timeSubmitted: 15000,
+   timeSelected: 60000,
+   timeSubmitted: 60000,
    tileAmountSelected: 16,
 };
 
@@ -27,6 +27,7 @@ const reducer = (state: Settings = initialState, action: Action) => {
             timeSelected: action.payload
          }
          case SET_TIME:
+            console.log("timeSubmitted", state.timeSubmitted)
             return {
                ...state,
                timeSubmitted: state.timeSelected 

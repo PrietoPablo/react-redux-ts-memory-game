@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className="app-title">Memory</h1>
+      <h1>Memory</h1>
       {settings.isSetGame ? <GameBoard /> : <Settings />}
     </div>
   );
