@@ -1,9 +1,12 @@
 .settings {
-   border: 1px solid tomato;
-   width: 70%;
+   border-radius: 1em;
+   background-color: white;
+   width: 75%;
+   height: 70%;
    display: flex;
    flex-direction: column;
    align-items: center;
+   justify-content: center;
    &-form {
       display: flex;
       flex-direction: column;
@@ -13,13 +16,23 @@
          flex-direction: column;
          align-items: center;
       }
-      &-timer {
+      &-time {
          display: flex;
          flex-direction: column;
          align-items: center;
+         h3 {
+            font-size: 1.7em;
+            margin: 0.5em 0; 
+         }
       }
       &-submit {
-         margin: 15px 0;
+         font-family: 'Poppins', sans-serif;
+         margin: 3em 0;
+         background-color: #D37D76;
+         border: 0;
+         width: 50%;
+         height: 2.5em;
+         border-radius: 0.5em;
       }
    }
 }

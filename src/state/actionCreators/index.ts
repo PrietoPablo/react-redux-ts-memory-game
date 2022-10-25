@@ -6,6 +6,7 @@ import {
    CHOOSE_TILE,
    RESET_CHOICES,
    IS_MATCHED,
+   RUN_TIMER,
 } from "../actions";
 import { Dispatch } from 'redux';
 
@@ -57,5 +58,13 @@ export const isMatched = (matchedKey: number) => {
          type: IS_MATCHED,
          payload: matchedKey
       });
+   }
+}
+
+export const runTimer = (timer: number) => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: RUN_TIMER,
+      })
    }
 }

@@ -20,7 +20,7 @@ function Settings() {
    return (
       <div className="settings">
          <form action="submit" className="settings-form" onSubmit={handleSubmit}>
-            <div className="settings-form-tile">
+            {/* <div className="settings-form-tile">
                <h3>choose the number of tiles you want to play with</h3>
                <div className="settings-form-tile-choice">
                   <input 
@@ -48,7 +48,7 @@ function Settings() {
                   />
                   <label className="settings-form-tile-label">36 tiles</label>
                </div>
-            </div>
+            </div> */}
             <div className="settings-form-time">
                <h3>choose the time imparted</h3>
                <div className="settings-form-time-choice">
@@ -57,25 +57,25 @@ function Settings() {
                      id="3" 
                      name="time" 
                      className="settings-form-time-button" 
-                     onClick={() => selectTime(3000)}
+                     onClick={() => selectTime(60000)}
                   />
-                  <label className="settings-form-time-label">3 minutes</label>
+                  <label className="settings-form-time-label">1 minute</label>
                   <input 
                      type="radio" 
                      id="2" 
                      name="time" 
                      className="settings-form-time-button" 
-                     onClick={() => selectTime(2000)}
+                     onClick={() => selectTime(40000)}
                   />
-                  <label className="settings-form-time-label">2 minutes</label>
+                  <label className="settings-form-time-label">40 seconds</label>
                   <input 
                      type="radio" 
                      id="1" 
                      name="time" 
                      className="settings-form-time-button" 
-                     onClick={() => selectTime(1000)}
+                     onClick={() => selectTime(25000)}
                   />
-                  <label className="settings-form-time-label">1 minutes</label>
+                  <label className="settings-form-time-label">25 seconds</label>
                </div>
             </div>
          <button className="settings-form-submit">Start the Game !</button>

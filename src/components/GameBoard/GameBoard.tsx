@@ -10,10 +10,9 @@ import Tile from '../Tile/Tile';
 function GameBoard() {
   // Redux Logic to access and manipulate state
    const dispatch = useDispatch();
-
    const { resetChoices, isMatched } = bindActionCreators(actionCreators, dispatch);
-   
-  const settings = useSelector((state: State) => state.settings);
+  
+  // const settings = useSelector((state: State) => state.settings);
   const memory = useSelector((state: State) => state.memory);
 
   const tiles = memory.tiles;

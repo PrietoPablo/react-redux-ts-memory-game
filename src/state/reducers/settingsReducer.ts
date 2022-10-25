@@ -15,22 +15,22 @@ type Settings = {
 const initialState: Settings = {
    isSetGame: false,
    timeSelected: 2,
-   timeSubmitted: 0,
+   timeSubmitted: 15000,
    tileAmountSelected: 16,
 };
 
 const reducer = (state: Settings = initialState, action: Action) => {
    switch (action.type) {
-      case SET_TIME:
-         return {
-            ...state,
-            timeSubmitted: state.timeSelected 
-         }
       case SELECT_TIME:
          return {
             ...state,
             timeSelected: action.payload
          }
+         case SET_TIME:
+            return {
+               ...state,
+               timeSubmitted: state.timeSelected 
+            }
       case SET_GAME:
          return {
             ...state,

@@ -18,12 +18,15 @@
    }
 }
 
-.reveal .Tile-front {
-   transform: rotateY(0deg);
-   transition-delay: 0.25s;
-}
+.reveal {
+   .Tile-front {
+      transform: rotateY(0deg);
+      transition-delay: 0.25s;
 
-.reveal .Tile-back {
-   transform: rotateY(90deg);
-   transition-delay: 0s;
+   }
+   .Tile-back {
+      transform: rotateY(90deg);
+      transition-delay: 0s;
+
+   }
 }

@@ -9,8 +9,8 @@ function App() {
   const settings = useSelector((state: State) => state.settings);
 
   return (
-    <div className="App">
-      <h1>Memory</h1>
+    <div className="app">
+      <h1 className="app-title">Memory</h1>
       {settings.isSetGame ? <GameBoard /> : <Settings />}
     </div>
   );
