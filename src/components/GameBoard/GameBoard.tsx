@@ -52,7 +52,7 @@ function GameBoard() {
               revealed={tile.key === memory.firstChoice || tile.key === memory.secondChoice || tile.isMatched} />
             ))}
       </div> 
-      {/* <Timer />      */}
+      <Timer />     
     </div>
   )
 }
