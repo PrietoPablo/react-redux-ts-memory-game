@@ -31,10 +31,20 @@ interface IsMatched {
    payload: number;
 }
 
-export const RUN_TIMER = 'START_TIMER';
+export const START_TIMER = 'START_TIMER';
 interface StartTimer {
-   type: typeof RUN_TIMER;
+   type: typeof START_TIMER;
+}
+
+export const START_GAME = 'START_GAME';
+interface StartGame {
+   type: typeof START_GAME;
+}
+
+export const IS_GAME_DONE = 'IS_GAME_DONE';
+interface IsGameDone {
+   type: typeof IS_GAME_DONE;
 }
 
 
-export type Action = SetTime | SelectTime | SetGame | ChooseTile | ResetChoices | IsMatched | StartTimer;
+export type Action = SetTime | SelectTime | SetGame | ChooseTile | ResetChoices | IsMatched | StartTimer | StartGame | IsGameDone;

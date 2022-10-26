@@ -1,8 +1,10 @@
 import { 
    Action,
    CHOOSE_TILE,
+   IS_GAME_DONE,
    IS_MATCHED,
    RESET_CHOICES,
+   START_GAME,
    } from '../actions/index';
 
 type Tile = {
@@ -43,11 +45,16 @@ const initialState: Memory = {
 
 const reducer = (state: Memory = initialState, action: Action) => {
    switch (action.type) {
+      case START_GAME:
+         return {
+            ...state,
+            gameAdvancement: "ongoing",
+         }
       case CHOOSE_TILE:
          if (!state.firstChoice) {
             return {
                ...state,
-               firstChoice: action.payload
+               firstChoice: action.payload,
             }
          }
          else {
@@ -67,6 +74,11 @@ const reducer = (state: Memory = initialState, action: Action) => {
             ...state,
             tiles: state.tiles.map(tile => tile.id === action.payload ? {...tile, isMatched: true} : tile),
          }
+      case IS_GAME_DONE:
+         return {
+            ...state,
+            gameAdvancement: state.tiles.some(tile => tile.isMatched === false) === false ? "done" : "ongoing",            
+      }
       default:
          return state;
    }

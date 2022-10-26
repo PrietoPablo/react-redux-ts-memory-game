@@ -1,6 +1,6 @@
 import { 
    Action,
-   RUN_TIMER,
+   START_TIMER,
    } from '../actions/index';
 
    type Timer = {
@@ -15,7 +15,7 @@ import {
 
 const reducer = (state: Timer = initialState, action: Action) => {
    switch (action.type) {
-      case RUN_TIMER:
+      case START_TIMER:
          return state;
       default:
          return state;

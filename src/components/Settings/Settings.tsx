@@ -9,12 +9,13 @@ function Settings() {
 
    const dispatch = useDispatch();
 
-   const { setTime, selectTime, setGame } = bindActionCreators(actionCreators, dispatch);
+   const { setTime, selectTime, setGame, startGame } = bindActionCreators(actionCreators, dispatch);
 
    const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
       setTime();
-      setGame();
+      setGame(); // this part of the state seems unnecessary right now but will be used on a future commit
+      startGame();
    }
 
    return (

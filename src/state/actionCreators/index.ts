@@ -6,7 +6,9 @@ import {
    CHOOSE_TILE,
    RESET_CHOICES,
    IS_MATCHED,
-   RUN_TIMER,
+   START_TIMER,
+   START_GAME,
+   IS_GAME_DONE,
 } from "../actions";
 import { Dispatch } from 'redux';
 
@@ -22,7 +24,7 @@ export const selectTime = (time: number) => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: SELECT_TIME,
-         payload: time
+         payload: time,
       });
    }
 }
@@ -31,6 +33,14 @@ export const setGame = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: SET_GAME,
+      });
+   }
+}
+
+export const startGame = () => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: START_GAME,
       });
    }
 }
@@ -47,7 +57,7 @@ export const chooseTile = (tileKey: number) => {
 export const resetChoices = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
-         type: RESET_CHOICES
+         type: RESET_CHOICES,
       });
    }
 }
@@ -56,15 +66,23 @@ export const isMatched = (matchedKey: number) => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: IS_MATCHED,
-         payload: matchedKey
+         payload: matchedKey,
       });
    }
 }
 
-export const runTimer = (timer: number) => {
+export const isGameDone = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
-         type: RUN_TIMER,
+         type: IS_GAME_DONE,
+      })
+   }
+}
+
+export const startTimer = (timer: number) => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: START_TIMER,
       })
    }
 }

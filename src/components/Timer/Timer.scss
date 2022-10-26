@@ -1,16 +1,29 @@
-.timer{
+.timer {
    background-color:#d37e76af;
    border-radius: 0.5em;
    height: 50px;
    width: 70vw;
+   max-width: 670px;
    margin-bottom: 0.7em;
    display: flex;
    justify-content: flex-start;
    align-items: center;
-   &-filling{
+   &-filling {
       margin: 0 1em;
       background-color:#d37e7693;
       height: 50%;
       width: 70%;
    }
+}
+
+.completion {
+   background-color:#d37e76;
+   border-radius: 0.5em;
+   height: 50px;
+   width: 70vw;
+   max-width: 670px;
+   margin-bottom: 0.7em;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }

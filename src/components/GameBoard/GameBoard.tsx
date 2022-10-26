@@ -13,7 +13,7 @@ function GameBoard() {
   // Redux Logic to access and manipulate state
    const dispatch = useDispatch();
 
-   const { resetChoices, isMatched } = bindActionCreators(actionCreators, dispatch);
+   const { resetChoices, isMatched, isGameDone } = bindActionCreators(actionCreators, dispatch);
   
   // const settings = useSelector((state: State) => state.settings);
   const memory = useSelector((state: State) => state.memory);
@@ -28,14 +28,16 @@ function GameBoard() {
       // it would have been more simple to register the all tiles for first and second choice
       const choices = tiles.filter(tile => tile.key === memory.firstChoice || tile.key === memory.secondChoice);
     
-      choices[0].id === choices[1].id 
-      ?
-      isMatched(choices[0].id)
-      : 
-      console.log('no match');
-
+      // don't know if it's good practice
+      choices[0].id === choices[1].id && isMatched(choices[0].id);
+      
       setTimeout(() => resetChoices(), 700);      
     }
+    isGameDone();
+    console.log(memory.gameAdvancement);
+    // console.log(tiles.some(tile => tile.isMatched === false));
+
+
 
   }, [memory.firstChoice, memory.secondChoice]);
 
