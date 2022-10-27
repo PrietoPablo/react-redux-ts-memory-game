@@ -57,5 +57,23 @@ interface IsGameDone {
    type: typeof IS_GAME_DONE;
 }
 
+export const SEND_RESULT = 'SEND_RESULT';
+interface SendResult {
+   type: typeof SEND_RESULT;
+   payload: string;
+}
 
-export type Action = SetTime | SelectTime | SetGame | ChooseTile | ResetChoices | IsMatched | StartTimer | StartGame | IsGameDone | RunTimer | StopTimer;
+// need to distrubute action in multiple file
+export type Action = 
+   SetTime |
+   SelectTime |
+   SetGame |
+   ChooseTile |
+   ResetChoices |
+   IsMatched |
+   StartTimer |
+   StartGame |
+   IsGameDone |
+   RunTimer |
+   StopTimer |
+   SendResult;

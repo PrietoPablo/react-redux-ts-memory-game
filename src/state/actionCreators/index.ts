@@ -11,6 +11,7 @@ import {
    IS_GAME_DONE,
    RUN_TIMER,
    STOP_TIMER,
+   SEND_RESULT,
 } from "../actions";
 import { Dispatch } from 'redux';
 
@@ -80,7 +81,7 @@ export const isGameDone = () => {
       });
    }
 }
-
+// a toggle timer would be better here, instead of a start and stop actions
 export const startTimer = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
@@ -102,6 +103,15 @@ export const stopTimer = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: STOP_TIMER,
+      })
+   }
+}
+
+export const sendResult = (result: string) => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: SEND_RESULT,
+         payload: result
       })
    }
 }

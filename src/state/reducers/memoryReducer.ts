@@ -4,6 +4,7 @@ import {
    IS_GAME_DONE,
    IS_MATCHED,
    RESET_CHOICES,
+   SEND_RESULT,
    START_GAME,
    } from '../actions/index';
 
@@ -17,7 +18,7 @@ type Tile = {
 type Memory = {
    timer: number;
    gameAdvancement: string;
-   result: boolean;
+   gameResult: string;
    tiles: Tile[];
    firstChoice: number | null;
    secondChoice: number | null;
@@ -37,7 +38,7 @@ const Tiles: Tile[] = [
 const initialState: Memory = {
    timer: 0,
    gameAdvancement: 'starting',
-   result: false,
+   gameResult: "pedding",
    tiles: [...Tiles, ...Tiles].sort(() => Math.random() - 0.5).map((tile) => ({...tile, key: Math.random()})),
    firstChoice: null,
    secondChoice: null,
@@ -77,8 +78,13 @@ const reducer = (state: Memory = initialState, action: Action) => {
       case IS_GAME_DONE:
          return {
             ...state,
-            gameAdvancement: state.tiles.some(tile => tile.isMatched === false) === false ? "done" : "ongoing",            
-      }
+            gameAdvancement: state.tiles.some(tile => !tile.isMatched) === false ? "done" : "ongoing",            
+         }
+      case SEND_RESULT:
+         return {
+            ...state,
+            gameResult: action.payload,
+         }
       default:
          return state;
    }

@@ -13,7 +13,7 @@ function GameBoard() {
   // Redux Logic to access and manipulate state
    const dispatch = useDispatch();
 
-   const { resetChoices, isMatched, isGameDone } = bindActionCreators(actionCreators, dispatch);
+   const { resetChoices, isMatched, isGameDone, sendResult } = bindActionCreators(actionCreators, dispatch);
   
   // const settings = useSelector((state: State) => state.settings);
   const memory = useSelector((state: State) => state.memory);
@@ -35,9 +35,6 @@ function GameBoard() {
     }
     isGameDone();
     console.log(memory.gameAdvancement);
-    // console.log(tiles.some(tile => tile.isMatched === false));
-
-
 
   }, [memory.firstChoice, memory.secondChoice]);
 
@@ -53,7 +50,7 @@ function GameBoard() {
               key={tile.key}
               revealed={tile.key === memory.firstChoice || tile.key === memory.secondChoice || tile.isMatched} />
             ))}
-      </div> 
+      </div>
       <Timer />     
     </div>
   )
