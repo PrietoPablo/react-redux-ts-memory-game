@@ -9,6 +9,8 @@ import {
    START_TIMER,
    START_GAME,
    IS_GAME_DONE,
+   RUN_TIMER,
+   STOP_TIMER,
 } from "../actions";
 import { Dispatch } from 'redux';
 
@@ -75,14 +77,31 @@ export const isGameDone = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: IS_GAME_DONE,
-      })
+      });
    }
 }
 
-export const startTimer = (timer: number) => {
+export const startTimer = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: START_TIMER,
+      });
+   }
+}
+
+export const runTimer = (time: number) => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: RUN_TIMER,
+         payload: time,
+      });
+   }
+}
+
+export const stopTimer = () => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: STOP_TIMER,
       })
    }
 }

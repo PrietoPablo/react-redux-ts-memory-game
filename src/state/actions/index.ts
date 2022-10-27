@@ -41,10 +41,21 @@ interface StartGame {
    type: typeof START_GAME;
 }
 
+export const RUN_TIMER = 'RUN_TIMER';
+interface RunTimer {
+   type: typeof RUN_TIMER;
+   payload: number;
+}
+
+export const STOP_TIMER = 'STOP_TIMER';
+interface StopTimer {
+   type: typeof STOP_TIMER;
+}
+
 export const IS_GAME_DONE = 'IS_GAME_DONE';
 interface IsGameDone {
    type: typeof IS_GAME_DONE;
 }
 
 
-export type Action = SetTime | SelectTime | SetGame | ChooseTile | ResetChoices | IsMatched | StartTimer | StartGame | IsGameDone;
+export type Action = SetTime | SelectTime | SetGame | ChooseTile | ResetChoices | IsMatched | StartTimer | StartGame | IsGameDone | RunTimer | StopTimer;

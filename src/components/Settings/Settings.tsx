@@ -21,35 +21,6 @@ function Settings() {
    return (
       <div className="settings">
          <form action="submit" className="settings-form" onSubmit={handleSubmit}>
-            {/* <div className="settings-form-tile">
-               <h3>choose the number of tiles you want to play with</h3>
-               <div className="settings-form-tile-choice">
-                  <input 
-                     type="radio" 
-                     id="3" 
-                     name="tile" 
-                     className="settings-form-tile-button" 
-                     onClick={() => console.log('setTilesNumber')}
-                  />
-                  <label className="settings-form-tile-label">16 tiles</label>
-                  <input 
-                     type="radio" 
-                     id="2" 
-                     name="tile" 
-                     className="settings-form-tile-button" 
-                     onClick={() => console.log('setTilesNumber')}
-                  />
-                  <label className="settings-form-tile-label">25 tiles</label>
-                  <input 
-                     type="radio" 
-                     id="1" 
-                     name="tile" 
-                     className="settings-form-tile-button" 
-                     onClick={() => console.log('setTilesNumber')}
-                  />
-                  <label className="settings-form-tile-label">36 tiles</label>
-               </div>
-            </div> */}
             <div className="settings-form-time">
                <h3>choose the time imparted</h3>
                <div className="settings-form-time-choice">
