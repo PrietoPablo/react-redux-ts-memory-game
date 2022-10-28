@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators, State } from '../../state';
-import { startTimer } from '../../state/actionCreators';
 import './Timer.scss';
 
 function Timer() {
   // Redux Logic to access and manipulate state
   const dispatch = useDispatch();
 
-  const { startTimer, runTimer, stopTimer, sendResult, isGameDone } = bindActionCreators(actionCreators, dispatch);
+  const { startTimer, runTimer, stopTimer, sendResult } = bindActionCreators(actionCreators, dispatch);
  
   const settings = useSelector((state: State) => state.settings);
   const memory = useSelector((state: State) => state.memory);
@@ -56,12 +55,11 @@ function Timer() {
         </div>
         :
         <div className="completion">
-          <h2 className="completion-message">COMPLETED ! </h2>
-          {memory.gameResult === "win" ? <h2 className="completion-message">YOU WIN</h2> : null}
-          {memory.gameResult === "lost" ? <h2 className="completion-message">TRY AGAIN</h2> : null}
+          <h2 className="completion-message">COMPLETED !</h2>
+          {memory.gameResult === "win" ? <span className="completion-message">YOU WIN</span> : null}
+          {memory.gameResult === "lost" ? <span className="completion-message">TRY AGAIN</span> : null}
         </div>
-      }
-      
+      }      
     </>
   )
 }

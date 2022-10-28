@@ -1,0 +1,8 @@
+- smoother animation
+- block user access to tiles when tiles are "turning"
+- better end game animation
+- more factorization in actions
+- loadind element for more user friendly experience when game starts
+- time selection should be on the label tool
+- should I do a header/main elements ?
+- global vars for sass

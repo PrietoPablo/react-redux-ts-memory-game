@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import './GameBoard.scss';
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { State, actionCreators } from '../../state';
@@ -10,12 +10,12 @@ import Tile from '../Tile/Tile';
 import Timer from '../Timer/Timer';
 
 function GameBoard() {
-  // Redux Logic to access and manipulate state
+  // Redux Logic
    const dispatch = useDispatch();
 
-   const { resetChoices, isMatched, isGameDone, sendResult } = bindActionCreators(actionCreators, dispatch);
+   const { resetChoices, isMatched, isGameDone } = bindActionCreators(actionCreators, dispatch);
   
-  // const settings = useSelector((state: State) => state.settings);
+
   const memory = useSelector((state: State) => state.memory);
 
   const tiles = memory.tiles;
@@ -34,7 +34,6 @@ function GameBoard() {
       setTimeout(() => resetChoices(), 700);      
     }
     isGameDone();
-    console.log(memory.gameAdvancement);
 
   }, [memory.firstChoice, memory.secondChoice]);
 

@@ -1,9 +1,8 @@
 import './Tile.scss';
 
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actionCreators, State } from '../../state';
+import { actionCreators } from '../../state';
 
 interface Props {
    tile: {

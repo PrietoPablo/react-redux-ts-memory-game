@@ -25,8 +25,8 @@ function Settings() {
                <h3>choose the time imparted</h3>
                <div className="settings-form-time-choice">
                   <input 
-                     type="radio" 
-                     id="1" 
+                     type="radio"
+                     id="1"
                      name="time" 
                      className="settings-form-time-button" 
                      onClick={() => selectTime(60000)}
