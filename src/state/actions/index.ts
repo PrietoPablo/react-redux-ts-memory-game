@@ -63,6 +63,11 @@ interface SendResult {
    payload: string;
 }
 
+export const DISABLE_CHOICES = 'DISABLE_CHOICES';
+interface DisableChoices {
+   type: typeof DISABLE_CHOICES;
+}
+
 // need to distrubute action in multiple file
 export type Action = 
    SetTime |
@@ -76,4 +81,5 @@ export type Action =
    IsGameDone |
    RunTimer |
    StopTimer |
-   SendResult;
+   SendResult |
+   DisableChoices;

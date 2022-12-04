@@ -1,8 +1,8 @@
 import './Tile.scss';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { actionCreators } from '../../state';
+import { actionCreators, State } from '../../state';
 
 interface Props {
    tile: {
@@ -20,8 +20,12 @@ function Tile({ tile, revealed }: Props) {
    const dispatch = useDispatch();
    const { chooseTile } = bindActionCreators(actionCreators, dispatch);
 
+   const memory = useSelector((state: State) => state.memory);
+
    const handleClick = () => {
-      chooseTile(tile.key);
+      if (!memory.disabled) {
+         chooseTile(tile.key);
+      }
    }
 
   return (

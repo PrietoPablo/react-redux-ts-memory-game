@@ -12,6 +12,7 @@ import {
    RUN_TIMER,
    STOP_TIMER,
    SEND_RESULT,
+   DISABLE_CHOICES,
 } from "../actions";
 import { Dispatch } from 'redux';
 
@@ -103,7 +104,7 @@ export const stopTimer = () => {
    return (dispatch: Dispatch<Action>) => {
       dispatch({
          type: STOP_TIMER,
-      })
+      });
    }
 }
 
@@ -112,6 +113,14 @@ export const sendResult = (result: string) => {
       dispatch({
          type: SEND_RESULT,
          payload: result
-      })
+      });
+   }
+}
+
+export const disableChoices = () => {
+   return (dispatch: Dispatch<Action>) => {
+      dispatch({
+         type: DISABLE_CHOICES
+      });
    }
 }

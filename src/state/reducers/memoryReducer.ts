@@ -6,6 +6,7 @@ import {
    RESET_CHOICES,
    SEND_RESULT,
    START_GAME,
+   DISABLE_CHOICES,
    } from '../actions/index';
 
 type Tile = {
@@ -22,6 +23,7 @@ type Memory = {
    tiles: Tile[];
    firstChoice: number | null;
    secondChoice: number | null;
+   disabled: boolean;
 }
 
 const Tiles: Tile[] = [
@@ -42,6 +44,7 @@ const initialState: Memory = {
    tiles: [...Tiles, ...Tiles].sort(() => Math.random() - 0.5).map((tile) => ({...tile, key: Math.random()})),
    firstChoice: null,
    secondChoice: null,
+   disabled: false,
 };
 
 const reducer = (state: Memory = initialState, action: Action) => {
@@ -69,6 +72,7 @@ const reducer = (state: Memory = initialState, action: Action) => {
             ...state,
             firstChoice: null,
             secondChoice: null,
+            disabled: false,
          } 
       case IS_MATCHED:
          return {
@@ -84,6 +88,11 @@ const reducer = (state: Memory = initialState, action: Action) => {
          return {
             ...state,
             gameResult: action.payload,
+         }
+      case DISABLE_CHOICES:
+         return {
+            ...state,
+            disabled: true,
          }
       default:
          return state;
